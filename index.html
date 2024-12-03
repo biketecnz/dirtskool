@@ -1,9 +1,51 @@
-<html><head><base href="/" />
+<html><head><base href="https://www.dirtskool.org" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
   href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
   rel="stylesheet">
+<!-- First preload video -->
+<link rel="preload" as="video" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Video_1.mp4">
+<!-- Then preload images -->
+<link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_1.jpg">
+<link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_2.jpg">
+<link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_3.jpg">
+<link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_4.jpg">
+<link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_5.jpg">
+<link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_6.jpg">
+<link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_8.jpg">
+<link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_Simon.jpg">
+<link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/dirtskool-logo-v2-final-PNG.png">
+<script>
+window.addEventListener('load', function() {
+  // Preload video first
+  const video = document.createElement('video');
+  video.preload = 'auto';
+  video.src = 'https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Video_1.mp4';
+
+  // After video starts loading, preload images
+  video.addEventListener('loadedmetadata', function() {
+    // List of all image URLs used in the page
+    const imageUrls = [
+      'https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_1.jpg',
+      'https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_2.jpg',
+      'https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_3.jpg',
+      'https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_4.jpg',
+      'https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_5.jpg',
+      'https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_6.jpg',
+      'https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_8.jpg',
+      'https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_Simon.jpg',
+      'https://biketecnz.github.io/dirtskool/dirtskool-logo-v2-final-PNG.png'
+    ];
+
+    // Create hidden image elements to preload images
+    imageUrls.forEach(url => {
+      const img = new Image();
+      img.src = url;
+    });
+  });
+});
+</script>
 <style>
   /* Base styles */
   body {
@@ -50,14 +92,37 @@
     font-size: 18px;
   }
   
-  /* Nested header cell */
+  /* Updated header-nested style */
   .header-nested {
     background-color: #29221fff;
-    width: 980%;
+    width: 100%; /* Changed from 980% to 100% */
     margin: 0 auto;
     border: 0px solid #404040 !important;
     border-radius: 0px;
-    padding: 0px !important;
+    padding: 0px 20px !important; /* Added horizontal padding */
+  }
+
+  /* Ensure the td containing the header has proper display and width */
+  .header-nested td {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* This ensures vertical centering */
+    padding: 10px 20px !important;
+  }
+
+  /* Add styles for the header links/text */
+  .header-nested div {
+    flex: 1;
+    padding: 0 10px;
+  }
+
+  /* Add styles for the header booking link */
+  .header-nested a {
+    color: #ffffff;
+    text-decoration: none;  /* Removes underline */
+    display: inline-block;
+    vertical-align: middle;
   }
 
   /* Hero video section */
@@ -186,8 +251,8 @@
   
   /* Updated image style for row 9 */
   .main-table tr:nth-child(9) img {
-    object-position: center calc(-400px + 000px); /* Shifts image up 100px to crop top */
-    height: calc(100% + 200px); /* Increase height to accommodate crops on both ends */
+    object-position: /* center calc(-400px + 000px); Shifts image up 100px to crop top */
+    height:  /* calc(100% + 200px);Increase height to accommodate crops on both ends */
   }
   
   /* Split - We endeavour to | image */
@@ -424,7 +489,9 @@
           <tr>
             <td class="header-nested" style="display: flex; justify-content: space-between; align-items: center;">
               <div style="flex: 1; text-align: left;">Dirtskool</div>
-              <div style="flex: 1; text-align: right;">Booking</div>
+              <div style="flex: 1; text-align: right;">
+                <a href="https://www.dirtskool.org/booking" style="color: #ffffff; text-decoration: none;">Booking</a>
+              </div>
             </td>
           </tr>
         </table>
@@ -433,7 +500,7 @@
     <tr>
       <td colspan="2">
         <div class="video-overlay">
-          At dirtskool we take novice riders on a journey that empowers them to have fun trail riding and ensures they have the skills to keep themselves safe.
+          At Dirtskool we take novice riders on a journey that empowers them to have fun trail riding and ensures they have the skills to keep themselves safe.
         </div>
         <video autoplay loop muted playsinline>
           <source src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Video_1.mp4" type="video/mp4">
@@ -443,10 +510,10 @@
     <tr>
       <td colspan="2"><b>Dirtskool</b> was recently featured in an <br>
       in-depth story on stuff.co.nz<br>
-      <a href="https://www.stuff.co.nz/sport/other-sports/130009005/riding-high-welcome-to-the-wainuiomata-high-school-mountain-biking-academy" style="color: #ffffff; text-decoration: underline;">Read the article here</a><br>
+      <a href="https://www.stuff.co.nz/sport/other-sports/130009005/riding-high-welcome-to-the-wainuiomata-high-school-mountain-biking-academy" style="color: #ffffff; text-decoration: underline;" target="_blank">Read the article here</a><br>
       ​<br>​<br>
       <b>Dirtskool</b> is proud to celebrate our programme as a​<br> 
-      finalist in the Community Initiative category of the​<br> 
+      finalist in the <b>Community Initiative</b> category of the​<br> 
       <b>2022 Wellington Sport and Recreation Awards</b></td>
     </tr>
     <tr>
@@ -533,9 +600,10 @@
               involved.
               <br>​<br>
               We have been able to do this for the past two years<br>
-              through a partnership with Biketec, a local bike fleet<br>
+              through a partnership with <a href="https://www.biketec.org.nz" target="_blank"
+                style="color: #ffffff; text-decoration: underline;">Biketec</a>, a local bike fleet<br>
               maintenance service provider, and the assistance<br>
-              of Tū Manawa Active Aotearoa funding.
+              of <a href="https://www.nukuora.org.nz/funding/tu-manawa-active-aotearoa/" target="_blank" style="color: #ffffff; text-decoration: underline;">Tū Manawa Active Aotearoa</a> funding.
               <br>​<br>
               We currently have the capacity to deliver the<br>
               programme to 8 schools, with many more wanting<br>
@@ -654,31 +722,53 @@
             <td style="width: 50%; font-weight: 400; text-align: center; padding: 25px; font-size: 12px; background: white; border: none;">
               <h2 style="color: #203715ff; font-size: 32px; margin-bottom: 15px;">Want to know more?<br>Get in Touch</h2>
               <p style="color: #203715ff; font-size: 24px; margin-bottom: 30px;">021 746642</p>
-              <!-- Add margin: 0 auto to center the form -->
 
               <!-- Add EmailJS scripts -->
               <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
               <script type="text/javascript">
                 (function() {
-                                emailjs.init({
-                                  publicKey: "eS1lECw2cL7yaaYvC",
-                                });
-                              })();
+                  emailjs.init({
+                    publicKey: "eS1lECw2cL7yaaYvC",
+                  });
+                })();
               </script>
               <script type="text/javascript">
                 window.onload = function() {
-                                document.getElementById('contact-form').addEventListener('submit', function(event) {
-                                  event.preventDefault();
-                                  emailjs.sendForm('service_ykda5qg', 'template_oah4zj9', this)
-                                    .then(() => {
-                                      console.log('SUCCESS!');
-                                      alert('Message sent successfully!');
-                                    }, (error) => {
-                                      console.log('FAILED...', error);
-                                      alert('Failed to send message. Please try again.');
-                                    });
-                                });
-                              }
+                  document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    // First validate email
+                    const email = document.getElementById('user_email').value;
+                    if (!email.includes('@')) {
+                      alert('Please enter a valid email address with @ symbol');
+                      return false;
+                    }
+
+                    // Show loading state
+                    const submitButton = this.querySelector('button[type="submit"]');
+                    const originalButtonText = submitButton.innerHTML;
+                    submitButton.innerHTML = 'Sending...';
+                    submitButton.disabled = true;
+
+                    // Send email using EmailJS
+                    emailjs.sendForm('service_ykda5qg', 'template_oah4zj9', this)
+                      .then(() => {
+                        // Success
+                        alert('Thank you for your message, we\'ll be in touch soon');
+                        this.reset(); // Clear the form
+                      })
+                      .catch((error) => {
+                        // Error
+                        console.error('EmailJS Error:', error);
+                        alert('Failed to send message. Please try again.');
+                      })
+                      .finally(() => {
+                        // Reset button state
+                        submitButton.innerHTML = originalButtonText;
+                        submitButton.disabled = false;
+                      });
+                  });
+                }
               </script>
 
               <form id="contact-form" style="max-width: 400px; margin: 0 auto;">
@@ -755,21 +845,5 @@
       <td colspan="2">© 2025 Dirtskool</td>
     </tr>
   </table>
-
-  <script>
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const email = document.getElementById('user_email').value;
-    
-    if (!email.includes('@')) {
-      alert('Please enter a valid email address with @ symbol');
-      return false;
-    }
-    
-    // If validation passes, form can be submitted
-    this.submit();
-  });
-  </script>
 </body>
 </html>
