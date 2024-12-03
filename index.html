@@ -1,5 +1,9 @@
 <html><head><base href="/" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+  rel="stylesheet">
 <style>
   /* Base styles */
   body {
@@ -73,8 +77,9 @@
     color: white;
     font-size: 50px;
     font-weight: 700;
-    max-width: 80%;
+    max-width: 100%;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    line-height: 1.1; /* Added line to reduce spacing */
   }
   
   /* Award section */
@@ -87,21 +92,22 @@
     font-size: 28px;
     font-weight: 600;
     text-align: center;
-    padding: 40px 40px 80px 40px;
+    padding: 80px 40px 90px 40px;
+    line-height: 1.1; 
   }
   
-  /* Intro section */
+  /* Intro section - The Dirtskool programme */
   .main-table tr:nth-child(4) { 
     height: 150px !important;
     background-color: #312824ff;
 
   }
   .main-table tr:nth-child(4) td {
-    color: #ffffff;
+    color: white;
     font-weight: 200;
     text-align: center;
-    padding: 120px 40px 120px 40px;
-    font-size: 16px;
+    padding: 100px 40px 100px 40px;
+    font-size: 26px;
   }
   
   /* Image  */
@@ -116,11 +122,11 @@
     background-color: #312824ff;
   }
   .main-table tr:nth-child(6) td {
-    color: #e0e0e0;
+    color: white;
     font-weight: 200;
     text-align: right;
     padding: 120px 40px 120px 40px;
-    font-size: 18px;
+    font-size: 20px;
   }
   
   /* Image & text “I enjoyed trying */
@@ -131,11 +137,34 @@
   .main-table tr:nth-child(7) td {
     color: #ffffff;
     font-weight: 500;
-    text-align: left;
+    text-align: center;
     padding: 0px;
     font-size: 16px;
   }
+  /* Testimonial overlay styling */
+  .testimonial-overlay {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: centre;
+  padding: 40px ;
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+  max-width: 80%;
+  line-height: 1.4;
+  background: rgba(0,0,0,0);
+  border-radius: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
   
+  @media screen and (max-width: 1800px) {
+  .testimonial-overlay {
+  }
+  }
+
   /* Split - image | Developing a passion */
   .main-table tr:nth-child(8) { 
     height: 150px !important;
@@ -164,7 +193,7 @@
   /* Split - We endeavour to | image */
   .main-table tr:nth-child(10) {
     height: 150px !important;
-    background-color: #312824ff;
+    background-color: #27211eff;
   }
   .main-table tr:nth-child(10) td {
     color: #f0f0f0;
@@ -173,7 +202,15 @@
     padding: 100px 40px 120px 80px;
     font-size: 18px;
   }
-  
+  .nested-cell td {
+  font-weight: 600;
+  text-align: left;
+  padding: 25px;
+  font-size: 20px;
+  background: #27211eff;
+  border: none;
+  }
+
   /* Split - image | The Dirtskool programme */
   .main-table tr:nth-child(11) { 
     height: 150px !important;
@@ -246,17 +283,54 @@
     background-color: #312824ff;
   }
   
+  .main-table tr:nth-child(13) img {
+    position: relative;
+    width: auto;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .main-table tr:nth-child(13) td {
+    text-align: center;
+    padding: 60px 00px 70px 30px;
+  }
+
   /* Our Goal*/
   .main-table tr:nth-child(14) {
     height: 150px !important;
-    background-color: #312824ff;
+    background-color: #203715ff;
   }
   .main-table tr:nth-child(14) td {
     color: white;
     font-weight: 400;
-    text-align: center;
-    padding: 30px;
-    font-size: 16px;
+    text-align: left;
+    padding: 25px 0px 50px 0px;
+    font-size: 20px;
+  }
+  /* Button styles */
+  .booking-button {
+  display: inline-block;
+  padding: 15px 30px;
+  margin-top: 30px;
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: 0px;
+  }
+  
+  .booking-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  }
+  
+  .booking-button:active {
+  transform: translateY(0px);
+  background-color: rgba(255, 255, 255, 0.2);
   }
 
   /* Contact section */
@@ -268,7 +342,7 @@
     color: white;
     font-weight: 400;
     text-align: center;
-    padding: 30px;
+    padding: 30px 80px 80px 0px;
     font-size: 10px;
     
   }
@@ -330,19 +404,16 @@
     width: 900px;
     height: 100%;
     margin: 0 auto;
-    background: #312824ff;
+    background: red;
     border-collapse: collapse;
     border: none;
   }
 
-  .nested-cell td {
-    font-weight: 600;
-    text-align: left;
-    padding: 25px;
-    font-size: 20px;
-    background: #312824ff;
-    border: none;
+  /* Update the image object-position property in the contact section */
+  .main-table tr:nth-child(15) td:nth-child(2) img {
+    object-position: top;
   }
+
 </style>
 </head>
 <body>
@@ -373,16 +444,16 @@
       <td colspan="2"><b>Dirtskool</b> was recently featured in an <br>
       in-depth story on stuff.co.nz<br>
       <a href="https://www.stuff.co.nz/sport/other-sports/130009005/riding-high-welcome-to-the-wainuiomata-high-school-mountain-biking-academy" style="color: #ffffff; text-decoration: underline;">Read the article here</a><br>
-      ​<br>
-      Dirtskool is proud to celebrate our programme as a​<br> 
+      ​<br>​<br>
+      <b>Dirtskool</b> is proud to celebrate our programme as a​<br> 
       finalist in the Community Initiative category of the​<br> 
-      2022 Wellington Sport and Recreation Awards</td>
+      <b>2022 Wellington Sport and Recreation Awards</b></td>
     </tr>
     <tr>
       <td colspan="2">
         <table style="width: 900px; height: 100%; margin: 0 auto; background: #312824ff; border-collapse: collapse; border: none;">
           <tr>
-            <td style="font-weight: 700; text-align: Left; padding: 25px; font-size: 20px; background: #312824ff; border: none;">
+            <td style="font-weight: 700; text-align: Left; padding: 25px; font-size: 22px; background: #312824ff; border: none;">
               The Dirtskool programme is run during school time,​<br>
               integrated into the phys-ed class offerings of high schools​<br>
               across the Wellington Region.
@@ -400,7 +471,7 @@
       <td colspan="2">
         <table style="width: 900px; height: 100%; margin: 0 auto; background: #312824ff; border-collapse: collapse; border: none;">
           <tr>
-            <td style="font-weight: 700; text-align: right; padding: 25px; font-size: 20px; background: #312824ff; border: none;">
+            <td style="font-weight: 700; text-align: right; padding: 25px; font-size: 22px; background: #312824ff; border: none;">
               While students are raving about the fun they're having as​<br>
               they attain new skills and confidence, teachers and parents​<br>
               are remarking about the positive changes in attitude and​<br>
@@ -410,8 +481,17 @@
         </table>
       </td>
     </tr>
-    <tr>
       <td colspan="2">
+        <div class="testimonial-overlay">
+          "I enjoyed trying something new! and doing​<br>
+          something that was fun while it being beneficial for​<br>
+          my health/fitness. I liked how it was something that​<br>
+          wasn't school-related like it was a space for us​<br>
+          to take our minds off school. Although it was scary​<br>
+          sometimes, the adrenaline you get makes it​<br>
+          worthwhile. We were allowed to scream as much​<br>
+          we wanted and it made it more fun."
+        </div>
         <img src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_2.jpg" alt="Cover Image 2">
       </td>
     </tr>
@@ -533,24 +613,35 @@
       </td>
     </tr>
     <tr>
-      <td colspan="2">logo</td>
+      <td colspan="2" style="text-align: center; padding: 40px;">
+        <img src="https://biketecnz.github.io/dirtskool/dirtskool-logo-v2-final-PNG.png" alt="Dirtskool Logo" style="position: relative; width: auto; max-width: 1000px; height: auto; margin: 0 auto;">
+      </td>
     </tr>
     <tr>
       <td colspan="2">
-        <table style="width: 900px; height: 100%; margin: 0 auto; background: #312824ff; border-collapse: collapse; border: none;">
+        <table style="width: 900px; height: 100%; margin: 0 auto; background: #203715ff;; border-collapse: collapse; border: none;">
           <tr>
-            <td style="font-weight: 400; text-align: left; padding: 25px; font-size: 20px; background: #312824ff; border: none;">
+            <td style="font-weight: 400; text-align: left; padding: 25px; font-size: 20px; background: #203715ff;; border: none;">
               Our goal is to engage young people in the healthy, rewarding, physical,<br>
               recreation activity of mountain biking. Delivering not just trail riding skills, but<br>
               introducing them to self confidence and personal responsibility in the outdoors.<br>
               ​<br>
               Teachers, if you want to include this fun activity into your phys-ed/outdoor-ed<br>
-              classes bring them out to the Wainuiomata Mountain Bike Trail<br>
-              Park with Dirtskool, for a couple of introductory sessions or as a regular activity<br>
-              term long to develop ongoing skills and confidence, we make it work for<br>
-              your classes.​<br>
-              ​<br>
-              <h2 style="font-size: 50px; margin-top: 20px;">Teachers, book your class into Dirtskool right here, right now!</h2>
+              classes bring them out to the Wainuiomata Mountain Bike Trail Park with Dirtskool,<br>
+              for a couple of introductory sessions or as a regular activity term long to<br>
+              develop ongoing skills and confidence, we make it work for your classes.​<br>
+              ​<br>​<br>
+              <h2 style="font-size: 38px; margin-top: 20px;">Teachers,​<br>book your class into Dirtskool​<br>right here, right now!</h2>
+              <button type="submit" style="width: 200px; 
+                background: #312824ff;  
+                color: #ffffff;  
+                border: 1px solid #ffffff; 
+                padding: 12px 20px; 
+                border-radius: 0px; 
+                cursor: pointer; 
+                font-size: 16px; 
+                font-weight: 700;
+                transition: all 0.3s ease;">Book now!</button>
             </td>
           </tr>
         </table>
@@ -558,56 +649,101 @@
     </tr>
     <tr>
       <td colspan="2">
-        <table style="width: 900px; height: 100%; margin: 0 auto; background: #312824ff; border-collapse: collapse; border: none;">
+        <table style="width: 1200px; height: 100%; margin: 80px auto; background: #312824ff; border-collapse: collapse; border: none;">
           <tr>
-            <td style="width: 50%; font-weight: 400; text-align: left; padding: 25px; font-size: 20px; background: #312824ff; border: none;">
+            <td style="width: 50%; font-weight: 400; text-align: center; padding: 25px; font-size: 12px; background: white; border: none;">
+              <h2 style="color: #203715ff; font-size: 32px; margin-bottom: 15px;">Want to know more?<br>Get in Touch</h2>
+              <p style="color: #203715ff; font-size: 24px; margin-bottom: 30px;">021 746642</p>
+              <!-- Add margin: 0 auto to center the form -->
+
               <!-- Add EmailJS scripts -->
               <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
               <script type="text/javascript">
                 (function() {
-                  emailjs.init({
-                    publicKey: service_ykda5qg,
-                  });
-                })();
+                                emailjs.init({
+                                  publicKey: "eS1lECw2cL7yaaYvC",
+                                });
+                              })();
               </script>
               <script type="text/javascript">
                 window.onload = function() {
-                  document.getElementById('contact-form').addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    emailjs.sendForm('contact_service', 'contact_form', this)
-                      .then(() => {
-                        console.log('SUCCESS!');
-                        alert('Message sent successfully!');
-                      }, (error) => {
-                        console.log('FAILED...', error);
-                        alert('Failed to send message. Please try again.');
-                      });
-                  });
-                }
+                                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                                  event.preventDefault();
+                                  emailjs.sendForm('service_ykda5qg', 'template_oah4zj9', this)
+                                    .then(() => {
+                                      console.log('SUCCESS!');
+                                      alert('Message sent successfully!');
+                                    }, (error) => {
+                                      console.log('FAILED...', error);
+                                      alert('Failed to send message. Please try again.');
+                                    });
+                                });
+                              }
               </script>
 
-              <form id="contact-form" style="max-width: 400px;">
+              <form id="contact-form" style="max-width: 400px; margin: 0 auto;">
                 <input type="hidden" name="contact_number" value="697483">
                 
                 <div style="margin-bottom: 20px;">
-                  <label for="user_name" style="display: block; color: #fff; margin-bottom: 5px; font-size: 16px;">Name</label>
-                  <input type="text" id="user_name" name="user_name" required style="width: 100%; padding: 8px; border: 1px solid #d0ac68ff; border-radius: 4px; background: rgba(255,255,255,0.9);">
+                  <input type="text" 
+                         id="user_name" 
+                         name="user_name" 
+                         placeholder="Your name"
+                         required 
+                         style="width: 100%; 
+                                padding: 8px; 
+                                border: none;
+                                border-bottom: 1px solid #d0ac68ff; 
+                                background: rgba(255,255,255,0.9);
+                                font-family: inherit;
+                                font-size: inherit;">
                 </div>
                 
                 <div style="margin-bottom: 20px;">
-                  <label for="user_email" style="display: block; color: #fff; margin-bottom: 5px; font-size: 16px;">Email Address</label>
-                  <input type="email" id="user_email" name="user_email" required style="width: 100%; padding: 8px; border: 1px solid #d0ac68ff; border-radius: 4px; background: rgba(255,255,255,0.9);">
+                  <input type="text" 
+                         id="user_email" 
+                         name="user_email" 
+                         placeholder="Your email address"
+                         pattern="[^@\s]+@[^@\s]+"
+                         title="Must be an email address"
+                         required 
+                         style="width: 100%; 
+                                padding: 8px; 
+                                border: none;
+                                border-bottom: 1px solid #d0ac68ff; 
+                                background: rgba(255,255,255,0.9);
+                                font-family: inherit;
+                                font-size: inherit;">
                 </div>
                 
                 <div style="margin-bottom: 20px;">
-                  <label for="message" style="display: block; color: #fff; margin-bottom: 5px; font-size: 16px;">Message</label>
-                  <textarea id="message" name="message" required style="width: 100%; height: 120px; padding: 8px; border: 1px solid #d0ac68ff; border-radius: 4px; background: rgba(255,255,255,0.9);"></textarea>
+                  <label for="message" style="display: block; color: #777675ff; margin-bottom: 5px; font-size: 13px; text-align: left; padding: 0px 0px 0px 11px; font-family: Arial;">Your message</label>
+                  <textarea id="message" 
+                            name="message" 
+                            required 
+                            style="width: 100%; 
+                                   height: 120px; 
+                                   padding: 8px; 
+                                   border: none;
+                                   border-bottom: 1px solid #d0ac68ff; 
+                                   background: rgba(255,255,255,0.9);
+                                   font-family: inherit;
+                                   font-size: inherit;"></textarea>
                 </div>
                 
-                <button type="submit" style="background: #d0ac68ff; color: #fff; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: 600;">Send Message</button>
+                <button type="submit" style="width: 100%; 
+                            background: #312824ff;  
+                            color: white; 
+                            border: 1px solid #312824ff; 
+                            padding: 12px; 
+                            border-radius: 0px; 
+                            cursor: pointer; 
+                            font-size: 16px; 
+                            font-weight: 600;
+                            transition: all 0.3s ease;">Send Message</button>
               </form>
             </td>
-            <td style="width: 50%; font-weight: 400; text-align: left; padding: 0; font-size: 20px; background: #312824ff; border: none; position: relative;">
+            <td style="width: 50%; font-weight: 400; text-align: left; padding: 0; font-size: 20px; background: white; border: none; position: relative;">
               <img src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_Simon.jpg" alt="Simon" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
             </td>
           </tr>
@@ -616,8 +752,24 @@
     </tr>
     
     <tr>
-      <td colspan="2">©2023 Dirtskool</td>
+      <td colspan="2">© 2025 Dirtskool</td>
     </tr>
   </table>
+
+  <script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const email = document.getElementById('user_email').value;
+    
+    if (!email.includes('@')) {
+      alert('Please enter a valid email address with @ symbol');
+      return false;
+    }
+    
+    // If validation passes, form can be submitted
+    this.submit();
+  });
+  </script>
 </body>
 </html>
