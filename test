@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dirtskool</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Preload video and images -->
+  <link rel="preload" as="video" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Video_1.mp4">
+  <link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_1.jpg">
+  <link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_2.jpg">
+  <link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_3.jpg">
+  <link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_4.jpg">
+  <link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_5.jpg">
+  <link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_6.jpg">
+  <link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_8.jpg">
+  <link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_Simon.jpg">
+  <link rel="preload" as="image" href="https://biketecnz.github.io/dirtskool/dirtskool-logo-v2-final-PNG.png">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K3GLLFF698"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K3GLLFF698');
+  </script>
+
+  <style>
+    /* Reset & base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background-color: #000; color: #fff; line-height: 1.5; }
+    a { text-decoration: none; color: inherit; }
+    img, video { width: 100%; height: auto; display: block; }
+
+    /* Container */
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header { background-color: #29221f; display: flex; justify-content: space-between; align-items: center; padding: 20px; }
+    header h1 { font-weight: 700; font-size: 1.8rem; }
+    header a { color: #fff; font-weight: 500; }
+
+    /* Hero Section */
+    .hero { position: relative; width: 100%; overflow: hidden; }
+    .hero video { object-fit: cover; height: 80vh; width: 100%; }
+    .hero-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; max-width: 90%; font-size: 2rem; font-weight: 700; text-shadow: 2px 2px 6px rgba(0,0,0,0.6); }
+
+    /* Featured Section */
+    .featured { background-color: #d0ac68; color: #fff; text-align: center; padding: 80px 20px; font-size: 1.6rem; font-weight: 600; }
+
+    /* Intro Section */
+    .intro { background-color: #312824; text-align: center; padding: 80px 20px; font-size: 1.4rem; }
+
+    /* Split Sections */
+    .split { display: flex; flex-wrap: wrap; margin-bottom: 60px; }
+    .split img, .split .split-text { flex: 1 1 50%; }
+    .split .split-text { padding: 40px; font-size: 1rem; color: #fff; }
+
+    /* Testimonials */
+    .testimonial { position: relative; margin-bottom: 60px; }
+    .testimonial img { display: block; }
+    .testimonial-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-size: 1.2rem; max-width: 90%; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 10px; }
+
+    /* Curriculum Section */
+    .curriculum { background-color: #203715; color: #fff; padding: 80px 20px; }
+    .curriculum h2 { font-size: 2rem; margin-bottom: 20px; font-weight: 700; }
+    .curriculum h3 { font-size: 1.4rem; margin-top: 30px; margin-bottom: 15px; font-weight: 600; }
+    .curriculum ul { padding-left: 20px; margin-bottom: 20px; }
+    .curriculum li { margin-bottom: 10px; font-weight: 300; }
+
+    /* Logo Section */
+    .logo-section { text-align: center; padding: 60px 20px; }
+    .logo-section img { max-width: 300px; }
+
+    /* Goal Section */
+    .goal { background-color: #203715; padding: 60px 20px; text-align: left; font-size: 1rem; }
+    .goal h2 { font-size: 1.8rem; margin-bottom: 20px; }
+
+    /* Contact Section */
+    .contact { display: flex; flex-wrap: wrap; background-color: #fff; color: #203715; margin-bottom: 40px; }
+    .contact form, .contact .contact-img { flex: 1 1 50%; padding: 40px; }
+    .contact form input, .contact form textarea { width: 100%; margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-family: inherit; font-size: 1rem; }
+    .contact form button { padding: 12px 20px; font-weight: 600; border: none; border-radius: 5px; cursor: pointer; background-color: #312824; color: #fff; transition: 0.3s; }
+    .contact form button:hover { background-color: #444; }
+    .contact .contact-img img { object-fit: cover; height: 100%; width: 100%; }
+
+    /* Footer */
+    footer { background-color: #29221f; color: #ccc; text-align: center; padding: 20px; font-size: 0.9rem; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .split { flex-direction: column; }
+      .split .split-text, .split img { flex: 1 1 100%; }
+      .testimonial-text { font-size: 1rem; padding: 15px; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-text { font-size: 1.5rem; padding: 0 10px; }
+      header h1 { font-size: 1.4rem; }
+      .featured, .intro, .goal { font-size: 1.1rem; padding: 60px 10px; }
+      .curriculum h2 { font-size: 1.5rem; }
+      .curriculum h3 { font-size: 1.2rem; }
+      .curriculum li { font-size: 0.95rem; }
+      .contact { flex-direction: column; }
+      .contact form, .contact .contact-img { padding: 20px; }
+      .contact .contact-img img { height: 300px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text { font-size: 1.2rem; }
+      .testimonial-text { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="container">
+    <h1>Dirtskool</h1>
+    <a href="https://www.dirtskool.org/booking">Booking</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <video autoplay loop muted playsinline>
+      <source src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Video_1.mp4" type="video/mp4">
+    </video>
+    <div class="hero-text">
+      At Dirtskool we take novice riders on a journey that empowers them to have fun trail riding and ensures they have the skills to keep themselves safe.
+    </div>
+  </section>
+
+  <section class="featured container">
+    <b>Dirtskool</b> was recently featured in an in-depth story on stuff.co.nz.
+    <br>
+    <a href="https://www.stuff.co.nz/sport/other-sports/130009005/riding-high-welcome-to-the-wainuiomata-high-school-mountain-biking-academy" target="_blank" style="color:#fff; text-decoration:underline;">Read the article here</a>
+    <br><br>
+    <b>Dirtskool</b> is proud to celebrate our programme as a finalist in the <b>Community Initiative</b> category of the <b>2022 Wellington Sport and Recreation Awards</b>
+  </section>
+
+  <section class="intro container">
+    The Dirtskool programme is run during school time, integrated into the phys-ed class offerings of high schools across the Wellington Region.
+  </section>
+
+  <!-- Image Section -->
+  <section class="split">
+    <img src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_1.jpg" alt="Cover Image 1">
+  </section>
+
+  <!-- Testimonial -->
+  <section class="testimonial">
+    <img src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_2.jpg" alt="Cover Image 2">
+    <div class="testimonial-text">
+      "I enjoyed trying something new! and doing something that was fun while it being beneficial for my health/fitness. I liked how it was something that wasn't school-related like it was a space for us to take our minds off school. Although it was scary sometimes, the adrenaline you get makes it worthwhile. We were allowed to scream as much we wanted and it made it more fun."
+    </div>
+  </section>
+
+  <!-- Split content -->
+  <section class="split container">
+    <div class="split-text">
+      Developing a passion for cycling at a young age has been shown to have positive health benefits throughout a person’s life, and we are seeing previously inactive youth purchase their own equipment to continue riding outside of class. Proper riding instruction also improves rider safety and reduces accidents across all riding environments. For many participants this course is also often their first experience spending time in our beautiful natural bush, and they develop personal confidence, personal responsibility, and risk management skills while exploring our environment.
+    </div>
+    <img src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_3.jpg" alt="Cover Image 3">
+  </section>
+
+  <section class="split container">
+    <div class="split-text">
+      We endeavour to deliver the Dirtskool programme at no cost to high schools or their students to make this active recreation accessible for rangatahi that may otherwise not get the opportunity to engage in this type of activity, and is inspiring many who are less active, and a larger proportion of girls, to get involved.<br><br>
+      We have been able to do this for the past two years through a partnership with <a href="https://www.biketec.org.nz" target="_blank" style="color: #fff; text-decoration: underline;">Biketec</a> and the assistance of <a href="https://www.nukuora.org.nz/funding/tu-manawa-active-aotearoa/" target="_blank" style="color: #fff; text-decoration: underline;">Tū Manawa Active Aotearoa</a> funding.
+    </div>
+    <img src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_5.jpg" alt="Cover Image 5">
+  </section>
+
+  <!-- Curriculum -->
+  <section class="curriculum container">
+    <h2>Dirtskool Curriculum</h2>
+    <h3>Know your activity</h3>
+    <ul>
+      <li>What is mountain biking, types of mountain biking, trail grades, and difficulty levels.</li>
+      <li>The trail park environment, and the layout of the park being used.</li>
+      <li>The importance of appropriate clothing, footwear, food, drink, and what else to bring out on the trails.</li>
+      <li>Managing yourself in the wilderness while riding, and what to do if you get separated from the group.</li>
+      <li>How to recognise and ride within your ability.</li>
+    </ul>
+    <h3>Know your equipment</h3>
+    <ul>
+      <li>The different types of mountain bike.</li>
+      <li>How to set up your bike correctly for you.</li>
+      <li>Mountain biking safety equipment.</li>
+      <li>How to check your bike and equipment are safe to use before each ride.</li>
+    </ul>
+    <h3>Have fun on the trails!</h3>
+    <ul>
+      <li>Safe and efficient rider position, balance, pedalling, cornering, braking, and use of gears.</li>
+      <li>Types of trail features and terrain, and how to safely ride them.</li>
+      <li>Reading the trail, hazard awareness, evaluating risk, and identifying steering lines.</li>
+      <li>Advanced bike control techniques.</li>
+    </ul>
+    <p>Each skill progression involves different trail elements that are discussed, walked, and slowly ridden to learn the features and how to ride them safely and efficiently before linking them together in full speed trial riding. Students should be able to safely negotiate a grade three (low risk) trail by the middle of their first term in Dirtskool before advancing as their skill levels develop and confidence grows to more challenging grade four trails, and eventually grade five for those that are keen and capable.</p>
+  </section>
+
+  <!-- Logo -->
+  <section class="logo-section">
+    <img src="https://biketecnz.github.io/dirtskool/dirtskool-logo-v2-final-PNG.png" alt="Dirtskool Logo">
+  </section>
+
+  <!-- Goal Section -->
+  <section class="goal container">
+    <h2>Our Goal</h2>
+    Our goal is to engage young people in the healthy, rewarding, physical recreation activity of mountain biking. Delivering not just trail riding skills, but introducing them to self confidence and personal responsibility in the outdoors.
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact container">
+    <form id="contact-form">
+      <input type="text" name="user_name" placeholder="Your Name" required>
+      <input type="text" name="user_email" placeholder="Your Email" required pattern="[^@\s]+@[^@\s]+">
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="contact-img">
+      <img src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_Simon2.jpg" alt="Picture of Simon">
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Dirtskool
+  </footer>
+
+</body>
+</html>
