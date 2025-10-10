@@ -6,6 +6,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+  <!-- Google Tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K3GLLFF698"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -16,124 +17,224 @@
 
   <style>
     body {
-      margin:0;
-      padding:0;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
       font-family: 'Poppins', sans-serif;
-      background:#000;
-      color:#fff;
-      display:flex;
-      justify-content:center;
+      color: #fff;
     }
-    .page-container { max-width:1400px; width:100%; }
 
-    .main-table { width:100%; border-collapse:collapse; table-layout:fixed; }
-    .main-table td { vertical-align:top; position:relative; overflow:hidden; }
+    .page-container {
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Main table structure */
+    .main-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-table td {
+      border: 1px solid #333;
+      vertical-align: top;
+      position: relative;
+      overflow: hidden;
+    }
 
     /* Header */
-    .main-table tr:nth-child(1){ height:60px; background:#29221f; }
-    .header-nested { width:100%; margin:0 auto; padding:0 20px; display:flex; justify-content:space-between; align-items:center; background:#29221f; }
-    .header-nested div { flex:1; padding:0 10px; }
-    .header-nested a { color:#fff; text-decoration:none; }
+    .main-table tr:nth-child(1) { 
+      height: 60px !important;
+      background-color: #29221f;
+    }
+    .main-table tr:nth-child(1) td {
+      color: white;
+      font-weight: 800;
+      text-align: center;
+      padding: 20px 30px 0px 20px;
+      font-size: 22px;
+    }
 
-    /* Body */
-    .main-table tr:nth-child(2) td { text-align:center; padding:50px 20px; font-size:24px; font-weight:300; }
+    .header-nested {
+      width: 100%;
+      margin: 0 auto;
+      border: 0;
+      padding: 0 20px;
+      background-color: #29221f;
+    }
+    .header-nested td {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    .header-nested div { flex: 1; padding: 0 10px; }
+    .header-nested a { color: #ffffff; text-decoration: none; }
 
-    /* Booking instructions */
-    .booking-section { background:#29221f; padding:80px 20px; text-align:center; }
-    .booking-section h1 { font-size:38px; margin-bottom:20px; }
-    .booking-button { display:inline-block; padding:15px 30px; border:1px solid #fff; background:transparent; color:#fff; text-decoration:none; font-size:20px; font-weight:500; transition:all 0.3s ease; }
-    .booking-button:hover { background: rgba(255,255,255,0.1); }
+    /* Booking content section */
+    .booking-section {
+      background-color: #29221f;
+      padding: 80px 20px 120px 20px;
+      text-align: center;
+      font-size: 26px;
+      font-weight: 300;
+    }
 
-    /* Contact */
-    .contact-table { width:1200px; margin:80px auto; background:#312824; border-collapse:collapse; }
-    .contact-left { width:50%; padding:25px; text-align:center; color:#203715; font-size:12px; }
-    .contact-left h2 { font-size:32px; margin-bottom:15px; }
-    .contact-left p { font-size:24px; margin-bottom:30px; }
-    #contact-form input, #contact-form textarea { width:100%; padding:8px; border:none; border-bottom:1px solid #d0ac68; background:rgba(255,255,255,0.9); font-family:inherit; font-size:inherit; margin-bottom:20px; }
-    #contact-form button { width:100%; background:#312824; color:#fff; border:1px solid #312824; padding:12px; cursor:pointer; font-size:16px; font-weight:600; transition:all 0.3s ease; }
-    .contact-right { width:50%; position:relative; padding:0; }
-    .contact-right img { width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; }
+    .action-button {
+      width: 400px;
+      padding: 15px 0;
+      border: 1px solid white;
+      background: transparent;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      margin: 20px 0;
+    }
+    .action-button:hover { background: rgba(255,255,255,0.1); }
+
+    /* Contact section */
+    .contact-section {
+      background-color: #312824;
+      padding: 50px 80px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .contact-section .contact-info {
+      flex: 1 1 400px;
+      color: #ffffff;
+      font-size: 14px;
+      text-align: center;
+    }
+    .contact-section .contact-form {
+      flex: 1 1 400px;
+      background: #ffffff;
+      padding: 20px;
+      position: relative;
+    }
+    .contact-section .contact-form input,
+    .contact-section .contact-form textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 8px;
+      font-family: inherit;
+      font-size: 14px;
+      border: none;
+      border-bottom: 1px solid #d0ac68;
+      background: rgba(255,255,255,0.9);
+    }
+    .contact-section .contact-form button {
+      width: 100%;
+      padding: 12px;
+      background: #312824;
+      color: white;
+      border: 1px solid #312824;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .contact-section .contact-form button:hover { background: rgba(49,40,36,0.8); }
 
     /* Footer */
-    .main-table tr.footer{ background:#29221f; height:30px; text-align:center; font-size:10px; color:#ccc; padding:20px; }
+    .footer {
+      background-color: #29221f;
+      color: #cccccc;
+      text-align: center;
+      padding: 20px;
+      font-size: 10px;
+    }
 
-    @media screen and (max-width:768px){
-      .main-table, .main-table tbody, .main-table tr, .main-table td { display:block; width:100%; height:auto; }
-      .contact-left, .contact-right { width:100%; }
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .main-table, .main-table tbody, .main-table tr, .main-table td {
+        display: block;
+        width: 100% !important;
+        height: auto;
+      }
+      .contact-section { flex-direction: column; }
+      .action-button { width: 100%; }
     }
   </style>
 </head>
 <body>
-  <div class="page-container">
-    <table class="main-table">
-      <!-- Header -->
-      <tr>
-        <td colspan="2">
-          <div class="header-nested">
-            <div>Dirtskool</div>
-            <div><a href="https://www.dirtskool.org">Home</a></div>
+<div class="page-container">
+  <table class="main-table">
+    <!-- Header -->
+    <tr>
+      <td colspan="2">
+        <table style="width:100%; border-collapse:collapse; border:none;">
+          <tr>
+            <td class="header-nested">
+              <div style="flex:1; text-align:left;">Dirtskool</div>
+              <div style="flex:1; text-align:right;">
+                <a href="https://www.dirtskool.org">Mainpage</a>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- Booking Content -->
+    <tr>
+      <td colspan="2">
+        <div class="booking-section">
+          <h1>Teachers, book your class into Dirtskool right here!</h1>
+          <p>You can return here at any time to adjust your own schedule.<br>
+          Each class can attend a maximum of one session per week.<br>
+          Students cannot ride until they have completed the pre-course survey.</p>
+          
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSckYSgWQwrOlvI1sjTzH6LlqErv3vOgCouqXN8fhGblpu1M0w/viewform" target="_blank" class="action-button">Enrol a new class in Dirtskool</a>
+          <a href="https://docs.google.com/spreadsheets/d/1_XCSERuj3Hef0c6NErb__MnapWSFD6DjWhjJiClyFIs/edit?gid=630516063#gid=630516063" target="_blank" class="action-button">Schedule sessions for 2025</a>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Contact Section -->
+    <tr>
+      <td colspan="2">
+        <div class="contact-section">
+          <div class="contact-info">
+            <h2 style="color:#203715; font-size:32px;">Want to know more?<br>Get in Touch</h2>
+            <p style="color:#203715; font-size:24px;">021 746642</p>
           </div>
-        </td>
-      </tr>
 
-      <!-- Booking instructions -->
-      <tr>
-        <td colspan="2">
-          <div class="booking-section">
-            <h1>Teachers, book your class into Dirtskool right here, right now!</h1>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSckYSgWQwrOlvI1sjTzH6LlqErv3vOgCouqXN8fhGblpu1M0w/viewform" target="_blank" class="booking-button">Enrol a new class</a><br><br>
-            <a href="https://docs.google.com/spreadsheets/d/1_XCSERuj3Hef0c6NErb__MnapWSFD6DjWhjJiClyFIs/edit?gid=630516063#gid=630516063" target="_blank" class="booking-button">Schedule sessions for 2025</a>
+          <div class="contact-form">
+            <form id="contact-form">
+              <input type="hidden" name="contact_number" value="697483">
+              <input type="text" id="user_name" name="user_name" placeholder="Your name" required>
+              <input type="text" id="user_email" name="user_email" placeholder="Your email address" required>
+              <textarea id="message" name="message" placeholder="Your message" required></textarea>
+              <button type="submit">Send Message</button>
+            </form>
+
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+            <script>
+              (function(){emailjs.init("eS1lECw2cL7yaaYvC");})();
+              document.getElementById('contact-form').addEventListener('submit', function(event){
+                event.preventDefault();
+                emailjs.sendForm('service_ykda5qg','template_oah4zj9',this)
+                .then(function(){alert("Thank you for your message, we'll be in touch soon."); document.getElementById('contact-form').reset();})
+                .catch(function(err){alert("Failed to send message, please try again."); console.log(err);});
+              });
+            </script>
           </div>
-        </td>
-      </tr>
+        </div>
+      </td>
+    </tr>
 
-      <!-- Contact Section -->
-      <tr>
-        <td colspan="2">
-          <table class="contact-table">
-            <tr>
-              <td class="contact-left">
-                <h2>Want to know more?<br>Get in Touch</h2>
-                <p>021 746642</p>
-                <form id="contact-form">
-                  <input type="hidden" name="contact_number" value="697483">
-                  <input type="text" name="user_name" id="user_name" placeholder="Your name" required>
-                  <input type="text" name="user_email" id="user_email" placeholder="Your email address" required pattern="[^@\s]+@[^@\s]+" title="Must be an email address">
-                  <textarea name="message" id="message" placeholder="Your message" required></textarea>
-                  <button type="submit">Send Message</button>
-                </form>
-
-                <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-                <script>
-                  (function(){ emailjs.init("eS1lECw2cL7yaaYvC"); })();
-                  window.onload=function(){
-                    document.getElementById('contact-form').addEventListener('submit', function(e){
-                      e.preventDefault();
-                      const email = document.getElementById('user_email').value;
-                      if(!email.includes('@')) { alert('Please enter a valid email address'); return false; }
-                      const btn = this.querySelector('button[type="submit"]'); 
-                      const txt = btn.innerHTML; btn.innerHTML='Sending...'; btn.disabled=true;
-                      emailjs.sendForm('service_ykda5qg','template_oah4zj9',this)
-                        .then(()=>{ alert('Thank you for your message, we\'ll be in touch soon'); this.reset(); })
-                        .catch(err=>{ console.error(err); alert('Failed to send message. Please try again.'); })
-                        .finally(()=>{ btn.innerHTML=txt; btn.disabled=false; });
-                    });
-                  }
-                </script>
-              </td>
-              <td class="contact-right">
-                <img src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_Simon2.jpg" alt="Simon">
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-
-      <!-- Footer -->
-      <tr class="footer">
-        <td colspan="2">© 2025 Dirtskool</td>
-      </tr>
-    </table>
-  </div>
+    <!-- Footer -->
+    <tr>
+      <td colspan="2" class="footer">© 2025 Dirtskool</td>
+    </tr>
+  </table>
+</div>
 </body>
 </html>
