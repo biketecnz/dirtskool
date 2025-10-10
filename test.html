@@ -464,28 +464,30 @@ window.addEventListener('load', function() {
   }
   
   /* Mobile responsiveness */
-  @media screen and (max-width: 768px) {
-    .main-table, 
-    .main-table tbody, 
-    .main-table tr, 
-    .main-table td {
-      display: block;
-      width: 100% !important;
-      height: auto;
-    }
-    
-    .main-table td {
-      margin: 0;
-    }
-    
-    .video-overlay {
-      font-size: 24px;
-    }
+ @media screen and (max-width: 768px) {
+  .main-table, 
+  .main-table tbody, 
+  .main-table tr, 
+  .main-table td {
+    display: block;
+    width: 100% !important;
+    height: auto;
   }
+
+  /* Stack split columns vertically on mobile */
+  .split-left, .split-right {
+    width: 100% !important;
+  }
+
+  .video-overlay {
+    font-size: 24px;
+  }
+}
 
   /* Nested cell styles */
   .nested-cell {
-    width: 900px;
+    width: 100%;
+    max-width: 900px
     height: 100%;
     margin: 0 auto;
     background: red;
