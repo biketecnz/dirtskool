@@ -4,9 +4,11 @@
   <title>Dirtskool Booking</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-  <!-- Google Tag -->
+  <script src="https://cdn.counter.dev/script.js" data-id="c89e409b-c7ae-4e59-8da1-bf5116b65993" data-utcoffset="13"></script>
+  
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K3GLLFF698"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -16,7 +18,7 @@
   </script>
 
   <style>
-    body { margin:0; padding:0; background:#000; font-family:'Poppins', sans-serif; color:#fff; }
+    body { margin:0; padding:0; font-family:'Poppins', sans-serif; background:#000; color:#fff; }
     .page-container { max-width:1400px; margin:0 auto; width:100%; }
     .main-table { width:100%; border-collapse:collapse; table-layout:fixed; }
     .main-table td { border:1px solid #333; vertical-align:top; position:relative; overflow:hidden; }
@@ -28,32 +30,22 @@
     .header-nested div { flex:1; }
     .header-nested a { color:#fff; text-decoration:none; }
 
-    /* Booking Content section (matches main page style) */
+    /* Booking content */
     .main-content { background:#29221f; text-align:center; padding:100px 20px; font-size:26px; font-weight:300; }
     .main-content h1 { font-size:48px; font-weight:700; line-height:1.2; margin-bottom:30px; }
     .main-content p { font-size:22px; line-height:1.5; margin-bottom:40px; }
-    .booking-button {
-      display:inline-block; padding:15px 30px; margin:10px; border:1px solid #fff;
-      background:transparent; color:#fff; font-size:20px; font-weight:500;
-      text-decoration:none; transition:all 0.3s; border-radius:0;
-    }
-    .booking-button:hover { background: rgba(255,255,255,0.1); transform:translateY(-2px); }
+    .booking-button { display:block; padding:15px 30px; margin:10px auto; border:1px solid #fff; background:transparent; color:#fff; font-size:20px; font-weight:500; text-decoration:none; transition:all 0.3s; border-radius:0; text-align:center; }
+    .booking-button:hover { background: rgba(255,255,255,0.1); }
 
-    /* Contact section (identical to main page) */
+    /* Contact section */
     .contact-section { background:#312824; display:flex; flex-wrap:wrap; justify-content:center; padding:50px 0; }
     .contact-info { flex:1 1 400px; text-align:center; color:#fff; font-size:14px; margin:10px; }
     .contact-info h2 { font-size:32px; color:#203715; margin-bottom:15px; }
     .contact-info p { font-size:24px; color:#203715; }
 
     .contact-form { flex:1 1 400px; background:#fff; padding:20px; margin:10px; position:relative; }
-    .contact-form input, .contact-form textarea {
-      width:100%; margin-bottom:15px; padding:8px; font-family:inherit; font-size:14px;
-      border:none; border-bottom:1px solid #d0ac68; background:rgba(255,255,255,0.9);
-    }
-    .contact-form button {
-      width:100%; padding:12px; background:#312824; color:#fff; border:1px solid #312824;
-      font-weight:600; cursor:pointer; transition:all 0.3s;
-    }
+    .contact-form input, .contact-form textarea { width:100%; margin-bottom:15px; padding:8px; font-family:inherit; font-size:14px; border:none; border-bottom:1px solid #d0ac68; background:rgba(255,255,255,0.9); }
+    .contact-form button { width:100%; padding:12px; background:#312824; color:#fff; border:1px solid #312824; font-weight:600; cursor:pointer; transition:all 0.3s; }
     .contact-form button:hover { background:rgba(49,40,36,0.8); }
 
     /* Footer */
