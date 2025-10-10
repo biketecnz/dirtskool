@@ -38,7 +38,6 @@ body {
 }
 
 .main-table td {
-  border: 1px solid #333;
   vertical-align: top;
   position: relative;
   overflow: hidden;
@@ -53,7 +52,7 @@ body {
   color: white;
   font-weight: 800;
   text-align: center;
-  padding: 20px 30px 0px 20px;
+  padding: 20px 0 0 20px;
   font-size: 22px;
 }
 
@@ -68,7 +67,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 0;
 }
 .header-nested div { flex: 1; padding: 0 10px; }
 .header-nested a { color: #ffffff; text-decoration: none; }
@@ -79,7 +78,7 @@ body {
   color: white;
   font-weight: 200;
   text-align: center;
-  padding: 30px 0 100px 0;
+  padding: 80px 0 100px 0;
   font-size: 26px;
 }
 
@@ -89,12 +88,45 @@ body {
   color: white;
   font-weight: 400;
   text-align: center;
-  padding: 30px 80px 80px 0px;
-  font-size: 10px;
+  font-size: 12px;
 }
-.main-table tr:nth-child(3) td:nth-child(2) {
-  background-color: #312824; /* fix white bg */
+.main-table tr:nth-child(3) td:first-child {
+  padding: 25px;
+}
+.main-table tr:nth-child(3) td:last-child {
+  padding: 0;
   position: relative;
+}
+.main-table tr:nth-child(3) td:last-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Contact Form Styles */
+#contact-form input, #contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #d0ac68;
+  background: rgba(255,255,255,0.9);
+  font-family: inherit;
+  font-size: inherit;
+  margin-bottom: 20px;
+}
+#contact-form button {
+  width: 100%;
+  background: #312824;
+  color: white;
+  border: 1px solid #312824;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 /* Copyright */
@@ -180,10 +212,51 @@ body {
         <td style="width:50%; text-align:center; padding:25px; font-size:12px; font-weight:400; background:#312824;">
           <h2 style="color:#203715; font-size:32px; margin-bottom:15px;">Want to know more?<br>Get in Touch</h2>
           <p style="color:#203715; font-size:24px; margin-bottom:30px;">021 746642</p>
-          <!-- EmailJS scripts here -->
+
+          <form id="contact-form" style="max-width:400px; margin:0 auto;">
+            <input type="hidden" name="contact_number" value="697483">
+            <input type="text" id="user_name" name="user_name" placeholder="Your name" required>
+            <input type="text" id="user_email" name="user_email" placeholder="Your email address" required pattern="[^@\s]+@[^@\s]+" title="Must be an email address">
+            <textarea id="message" name="message" placeholder="Your message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+          <script type="text/javascript">
+            (function() {
+              emailjs.init("eS1lECw2cL7yaaYvC");
+            })();
+            window.onload = function() {
+              document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const email = document.getElementById('user_email').value;
+                if (!email.includes('@')) {
+                  alert('Please enter a valid email address with @ symbol');
+                  return false;
+                }
+                const submitButton = this.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.innerHTML;
+                submitButton.innerHTML = 'Sending...';
+                submitButton.disabled = true;
+                emailjs.sendForm('service_ykda5qg', 'template_oah4zj9', this)
+                  .then(() => {
+                    alert('Thank you for your message, we\'ll be in touch soon');
+                    this.reset();
+                  })
+                  .catch((error) => {
+                    console.error('EmailJS Error:', error);
+                    alert('Failed to send message. Please try again.');
+                  })
+                  .finally(() => {
+                    submitButton.innerHTML = originalButtonText;
+                    submitButton.disabled = false;
+                  });
+              });
+            }
+          </script>
         </td>
-        <td style="width:50%; text-align:left; padding:0; font-size:20px; background:#312824; position:relative;">
-          <img src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_Simon.jpg" alt="Simon" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+        <td style="width:50%; text-align:left; padding:0; font-size:20px; background:none; position:relative;">
+          <img src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_Simon.jpg" alt="Simon">
         </td>
       </tr>
     </table>
