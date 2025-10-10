@@ -62,6 +62,14 @@ window.addEventListener('load', function() {
 });
 </script>
 <style>
+    body {
+    display: flex;
+    justify-content: center; /* center content horizontally */
+  }
+  .page-container {
+    max-width: 1400px; /* optional: controls maximum width on large screens */
+    width: 100%;
+  }
   /* Base styles */
   body {
   margin: 0;
@@ -92,7 +100,7 @@ window.addEventListener('load', function() {
 
   /* Header row */
   .main-table tr:nth-child(1) { 
-    height: 40px !important;
+    height: 60px !important;
     background-color: #29221fff
   }
   .main-table tr:nth-child(1) td {
@@ -100,7 +108,7 @@ window.addEventListener('load', function() {
     font-weight: 800;
     text-align: center;
     padding: 20px 30px 0px 20px;
-    font-size: 18px;
+    font-size: 22px;
   }
   
   /* Updated header-nested style */
@@ -142,21 +150,23 @@ window.addEventListener('load', function() {
     background-color: #29221fff;
   }
   
-  .video-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    text-align: Left;
-    padding: 0px 0px 0px 30px;
-    color: white;
-    font-size: 50px;
-    font-weight: 700;
-    max-width: 100%;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    line-height: 1.1; /* Added line to reduce spacing */
-  }
+ .video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: left;
+  width: 80%;        /* <- makes it wider */
+  max-width: 1200px; /* <- optional max width */
+  padding: 20px;
+  color: white;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
   
   /* Award section */
   .main-table tr:nth-child(3) { 
@@ -224,14 +234,14 @@ window.addEventListener('load', function() {
   left: 25%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  text-align: centre;
+  text-align: center;
   padding: 40px ;
   color: white;
   font-size: 24px;
   font-weight: 400;
-  max-width: 80%;
+  max-width: 40%;
   line-height: 1.4;
-  background: rgba(0,0,0,0);
+  background: rgba(0,0,0,0.4);
   border-radius: 10px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
   }
@@ -248,10 +258,10 @@ window.addEventListener('load', function() {
   }
   .main-table tr:nth-child(8) td {
     color: #ffffff;
-    font-weight: 200;
+    font-weight: 300;
     text-align: left;
-    padding: 200px 40px 200px 80px;
-    font-size: 18px;
+    padding: 200px 60px 200px 70px;
+    font-size: 20px;
   }
   
   /* image */
@@ -273,10 +283,10 @@ window.addEventListener('load', function() {
   }
   .main-table tr:nth-child(10) td {
     color: #f0f0f0;
-    font-weight: 200;
+    font-weight: 300;
     text-align: left;
-    padding: 100px 40px 120px 80px;
-    font-size: 18px;
+    padding: 100px 30px 120px 30px;
+    font-size: 20px;
   }
   .nested-cell td {
   font-weight: 600;
@@ -294,10 +304,10 @@ window.addEventListener('load', function() {
   }
   .main-table tr:nth-child(11) td {
     color: #ffffff;
-    font-weight: 200;
+    font-weight: 300;
     text-align: left;
-    padding: 200px 40px 200px 80px;
-    font-size: 18px;
+    padding: 200px 60px 200px 70px;
+    font-size: 20px;
   }
   
   /* split Dirtskool Curriculum | image */
@@ -307,7 +317,7 @@ window.addEventListener('load', function() {
     background-color: #203715ff;
   }
   .main-table tr:nth-child(12) td {
-    padding: 100px 40px 120px 80px;
+    padding: 100px 30px 120px 30px;
     vertical-align: top;
   }
 
@@ -353,25 +363,28 @@ window.addEventListener('load', function() {
     font-weight: 200;
   }
 
-  /* logo */
-  .main-table tr:nth-child(13) {
-    height: auto !important;
-    background-color: #312824ff;
+/* Logo row */
+.main-table tr:nth-child(13) {
+  width: 100%;
+  background-color: #312824ff;
+  text-align: center;  /* ensures inline-block img is centered */
+  padding: 40px 0 50px 0;
+}
+
+.main-table tr:nth-child(13) td {
+  text-align: center;  /* make sure TD content centers */
+}
+
+  /* Logo row image */
+  .main-table tr:nth-child(13) img {
+    width: 80%;          /* scale down a bit */
+    max-width: 1200px;    /* optional */
+    height: auto;
+    display: block;
+    margin: 0 auto;      /* center horizontally */
+    position: static;    /* ensure not absolute */
   }
   
-  .main-table tr:nth-child(13) img {
-    position: relative;
-    width: auto;
-    max-width: 400px;
-    height: auto;
-    margin: 0 auto;
-  }
-
-  .main-table tr:nth-child(13) td {
-    text-align: center;
-    padding: 60px 00px 70px 30px;
-  }
-
   /* Our Goal*/
   .main-table tr:nth-child(14) {
     height: 150px !important;
@@ -456,28 +469,33 @@ window.addEventListener('load', function() {
   }
   
   /* Mobile responsiveness */
-  @media screen and (max-width: 768px) {
-    .main-table, 
-    .main-table tbody, 
-    .main-table tr, 
-    .main-table td {
-      display: block;
-      width: 100% !important;
-      height: auto;
-    }
-    
-    .main-table td {
-      margin: 0;
-    }
-    
-    .video-overlay {
-      font-size: 24px;
-    }
+ @media screen and (max-width: 768px) {
+  .main-table, 
+  .main-table tbody, 
+  .main-table tr, 
+  .main-table td {
+    display: block;
+    width: 100% !important;
+    height: auto;
   }
+
+
+
+
+  /* Stack split columns vertically on mobile */
+  .split-left, .split-right {
+    width: 100% !important;
+  }
+
+  .video-overlay {
+    font-size: 24px;
+  }
+}
 
   /* Nested cell styles */
   .nested-cell {
-    width: 900px;
+    width: 100%;
+    max-width: 900px
     height: 100%;
     margin: 0 auto;
     background: red;
@@ -493,6 +511,7 @@ window.addEventListener('load', function() {
 </style>
 </head>
 <body>
+  <div class="page-container">
   <table class="main-table">
     <tr>
       <td colspan="2">
@@ -563,14 +582,7 @@ window.addEventListener('load', function() {
     </tr>
       <td colspan="2">
         <div class="testimonial-overlay">
-          "I enjoyed trying something new! and doing​<br>
-          something that was fun while it being beneficial for​<br>
-          my health/fitness. I liked how it was something that​<br>
-          wasn't school-related like it was a space for us​<br>
-          to take our minds off school. Although it was scary​<br>
-          sometimes, the adrenaline you get makes it​<br>
-          worthwhile. We were allowed to scream as much​<br>
-          we wanted and it made it more fun."
+          "I enjoyed trying something new! and doing​ something that was fun while it being beneficial for​ my health/fitness. I liked how it was something that​ wasn't school-related like it was a space for us​ to take our minds off school. Although it was scary​ sometimes, the adrenaline you get makes it​ worthwhile. We were allowed to scream as much​ we wanted and it made it more fun." 
         </div>
         <img src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_2.jpg" alt="Cover Image 2">
       </td>
@@ -579,20 +591,10 @@ window.addEventListener('load', function() {
       <td class="split-left">
         <img src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_3.jpg" alt="Cover Image 3">
       </td>
-      <td class="split-right">Developing a passion for cycling at a young age​<br>
-      has been shown to have positive health benefits​<br>
-      throughout a person’s
-      life, and we are seeing​<br>
-      previously inactive youth purchase their own​<br>
-      equipment to continue riding outside of class.​<br>
-      Proper riding instruction also improves rider safety​<br>
-      and reduces accidents across all riding environments.​<br>
+      <td class="split-right">Developing a passion for cycling at a young age​ has been shown to have positive health benefits​ throughout a person’s life, and we are seeing​ previously inactive youth purchase their own​ equipment to continue riding outside of class.​ Proper riding instruction also improves rider safety​ and reduces accidents across all riding environments.​<br>
       ​<br>​
-      For many participants this course is also often their​<br>
-      first experience spending time in our beautiful​<br>
-      natural bush, and they develop personal​<br>
-      confidence, personal responsibility, and risk​<br>
-      management skills while exploring our environment.</td>
+      For many participants this course is also often their​ first experience spending time in our beautiful​ natural bush, and they develop personal​ 
+      confidence, personal responsibility, and risk​ management skills while exploring our environment.</td>
     </tr>
     <tr>
       <td colspan="2">
@@ -604,28 +606,13 @@ window.addEventListener('load', function() {
         <table class="nested-cell">
           <tr>
             <td>
-              We endeavour to deliver the Dirtskool programme<br>
-              at no cost to high schools or their students to make<br>
-              this active recreation accessible for rangatahi that<br>
-              may otherwise not get the opportunity to engage in<br>
-              this type of activity, and is inspiring many who are<br>
-              less active, and a larger proportion of girls, to get<br>
-              involved.
+              We endeavour to deliver the Dirtskool programme at no cost to high schools or their students to make this active recreation accessible for rangatahi that may otherwise not get the opportunity to engage in this type of activity, and is inspiring many who are less active, and a larger proportion of girls, to get involved.
               <br>​<br>
-              We have been able to do this for the past two years<br>
-              through a partnership with <a href="https://www.biketec.org.nz" target="_blank"
-                style="color: #ffffff; text-decoration: underline;">Biketec</a>, a local bike fleet<br>
-              maintenance service provider, and the assistance<br>
+              We have been able to do this for the past two years through a partnership with <a href="https://www.biketec.org.nz" target="_blank"
+                style="color: #ffffff; text-decoration: underline;">Biketec</a>, a local bike fleet maintenance service provider, and the assistance 
               of <a href="https://www.nukuora.org.nz/funding/tu-manawa-active-aotearoa/" target="_blank" style="color: #ffffff; text-decoration: underline;">Tū Manawa Active Aotearoa</a> funding.
               <br>​<br>
-              We currently have the capacity to deliver the<br>
-              programme to 8 schools, with many more wanting<br>
-              to join in. We are looking for new funding streams<br>
-              that will allow us to offer this opportunity through<br>
-              more schools and reach more rangatahi. Our goal<br>
-              is to try to offer a gateway to this activity in all<br>
-              colleges in the region. Please get in touch if you are<br>
-              aware of opportunities that could assist.
+              We currently have the capacity to deliver the programme to 8 schools, with many more wanting to join in. We are looking for new funding streams that will allow us to offer this opportunity through more schools and reach more rangatahi. Our goal is to try to offer a gateway to this activity in all colleges in the region. Please get in touch if you are aware of opportunities that could assist.
             </td>
           </tr>
         </table>
@@ -638,23 +625,9 @@ window.addEventListener('load', function() {
       <td class="split-left">
         <img src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_6.jpg" alt="Cover Image 6">
       </td>
-      <td class="split-right">The Dirtskool programme is delivered at local<br>
-      mountain bike trail parks by qualified instructors in<br>
-      collaboration with the phys-ed department at each<br>
-      of the participating high schools. A teacher is<br>
-      always present with their class during the<br>
-      programme sessions and assists with class/student<br>
-      management, and encouragement. Full risk<br>
-      management procedures are followed, with an<br>
-      emphasis on safety equipment and knowing your limits.<br>
+      <td class="split-right">The Dirtskool programme is delivered at local mountain bike trail parks by qualified instructors in collaboration with the phys-ed department at each of the participating high schools. A teacher is always present with their class during the programme sessions and assists with class/student management, and encouragement. Full risk management procedures are followed, with an emphasis on safety equipment and knowing your limits.<br>
       <br>
-      Dirtskool has two fleets of high quality mountain<br>
-      bikes and a full range of safety equipment to fit all<br>
-      sizes. Participants can use their own bike and safety<br>
-      equipment as long as they are in good condition <br>
-      and meet the relevant safety standards. The<br>
-      instructor will check personal equipment is<br>
-      appropriate for the activities.</td>
+      Dirtskool has two fleets of high quality mountain bikes and a full range of safety equipment to fit all sizes. Participants can use their own bike and safety equipment as long as they are in good condition and meet the relevant safety standards. The instructor will check personal equipment is appropriate for the activities.</td>
     </tr>
     <tr>
       <td class="split-left">
@@ -693,24 +666,20 @@ window.addEventListener('load', function() {
         <img src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_8.jpg" alt="Cover Image 8">
       </td>
     </tr>
-    <tr>
-      <td colspan="2" style="text-align: center; padding: 40px;">
-        <img src="https://biketecnz.github.io/dirtskool/dirtskool-logo-v2-final-PNG.png" alt="Dirtskool Logo" style="position: relative; width: auto; max-width: 1000px; height: auto; margin: 0 auto;">
-      </td>
-    </tr>
+   <tr>
+  <td colspan="2">
+    <img src="https://biketecnz.github.io/dirtskool/dirtskool-logo-v2-final-PNG.png" alt="Dirtskool Logo">
+  </td>
+</tr>
+
     <tr>
       <td colspan="2">
         <table style="width: 900px; height: 100%; margin: 0 auto; background: #203715ff;; border-collapse: collapse; border: none;">
           <tr>
             <td style="font-weight: 400; text-align: left; padding: 25px; font-size: 20px; background: #203715ff;; border: none;">
-              Our goal is to engage young people in the healthy, rewarding, physical,<br>
-              recreation activity of mountain biking. Delivering not just trail riding skills, but<br>
-              introducing them to self confidence and personal responsibility in the outdoors.<br>
+              Our goal is to engage young people in the healthy, rewarding, physical, recreation activity of mountain biking. Delivering not just trail riding skills, but introducing them to self confidence and personal responsibility in the outdoors.<br>
               ​<br>
-              Teachers, if you want to incorporate this fun activity into your phys-ed/outdoor-ed<br>
-              classes bring them out to the Wainuiomata or Porirua Mountain Bike Trail Park with Dirtskool,<br>
-              for a couple of introductory sessions or as a regular activity term long to<br>
-              develop ongoing skills and confidence, we make it work for your classes.​<br>
+              Teachers, if you want to incorporate this fun activity into your phys-ed/outdoor-ed classes bring them out to the Wainuiomata or Porirua Mountain Bike Trail Park with Dirtskool, for a couple of introductory sessions or as a regular activity term long to develop ongoing skills and confidence, we make it work for your classes.​<br>
               ​<br>​<br>
               <h2 style="font-size: 38px; margin-top: 20px;">Teachers,​<br>book your class into Dirtskool​<br>right here, right now!</h2>
               <a href="https://www.dirtskool.org/booking" style="width: 200px; 
@@ -860,5 +829,6 @@ window.addEventListener('load', function() {
       <td colspan="2">© 2025 Dirtskool</td>
     </tr>
   </table>
+  </div>
 </body>
 </html>
