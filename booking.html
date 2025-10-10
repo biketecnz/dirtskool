@@ -16,150 +16,54 @@
   </script>
 
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #000;
-      font-family: 'Poppins', sans-serif;
-      color: #fff;
-    }
-
-    .page-container {
-      max-width: 1400px;
-      width: 100%;
-      margin: 0 auto;
-    }
-
-    /* Main table structure */
-    .main-table {
-      width: 100%;
-      border-collapse: collapse;
-      table-layout: fixed;
-      margin: 0;
-      padding: 0;
-    }
-
-    .main-table td {
-      border: 1px solid #333;
-      vertical-align: top;
-      position: relative;
-      overflow: hidden;
-    }
+    body { margin:0; padding:0; background:#000; font-family:'Poppins', sans-serif; color:#fff; }
+    .page-container { max-width:1400px; margin:0 auto; width:100%; }
+    .main-table { width:100%; border-collapse:collapse; table-layout:fixed; }
+    .main-table td { border:1px solid #333; vertical-align:top; position:relative; overflow:hidden; }
 
     /* Header */
-    .main-table tr:nth-child(1) { 
-      height: 60px !important;
-      background-color: #29221f;
-    }
-    .main-table tr:nth-child(1) td {
-      color: white;
-      font-weight: 800;
-      text-align: center;
-      padding: 20px 30px 0px 20px;
-      font-size: 22px;
-    }
+    .main-table tr:nth-child(1) { height:60px; background:#29221f; }
+    .header-nested { width:100%; margin:0 auto; background:#29221f; padding:0 20px; }
+    .header-nested td { display:flex; justify-content:space-between; align-items:center; padding:10px 20px; }
+    .header-nested div { flex:1; }
+    .header-nested a { color:#fff; text-decoration:none; }
 
-    .header-nested {
-      width: 100%;
-      margin: 0 auto;
-      border: 0;
-      padding: 0 20px;
-      background-color: #29221f;
+    /* Booking Content section (matches main page style) */
+    .main-content { background:#29221f; text-align:center; padding:100px 20px; font-size:26px; font-weight:300; }
+    .main-content h1 { font-size:48px; font-weight:700; line-height:1.2; margin-bottom:30px; }
+    .main-content p { font-size:22px; line-height:1.5; margin-bottom:40px; }
+    .booking-button {
+      display:inline-block; padding:15px 30px; margin:10px; border:1px solid #fff;
+      background:transparent; color:#fff; font-size:20px; font-weight:500;
+      text-decoration:none; transition:all 0.3s; border-radius:0;
     }
-    .header-nested td {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-    }
-    .header-nested div { flex: 1; padding: 0 10px; }
-    .header-nested a { color: #ffffff; text-decoration: none; }
+    .booking-button:hover { background: rgba(255,255,255,0.1); transform:translateY(-2px); }
 
-    /* Booking content section */
-    .booking-section {
-      background-color: #29221f;
-      padding: 80px 20px 120px 20px;
-      text-align: center;
-      font-size: 26px;
-      font-weight: 300;
-    }
+    /* Contact section (identical to main page) */
+    .contact-section { background:#312824; display:flex; flex-wrap:wrap; justify-content:center; padding:50px 0; }
+    .contact-info { flex:1 1 400px; text-align:center; color:#fff; font-size:14px; margin:10px; }
+    .contact-info h2 { font-size:32px; color:#203715; margin-bottom:15px; }
+    .contact-info p { font-size:24px; color:#203715; }
 
-    .action-button {
-      width: 400px;
-      padding: 15px 0;
-      border: 1px solid white;
-      background: transparent;
-      color: white;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      transition: all 0.3s ease;
-      margin: 20px 0;
+    .contact-form { flex:1 1 400px; background:#fff; padding:20px; margin:10px; position:relative; }
+    .contact-form input, .contact-form textarea {
+      width:100%; margin-bottom:15px; padding:8px; font-family:inherit; font-size:14px;
+      border:none; border-bottom:1px solid #d0ac68; background:rgba(255,255,255,0.9);
     }
-    .action-button:hover { background: rgba(255,255,255,0.1); }
-
-    /* Contact section */
-    .contact-section {
-      background-color: #312824;
-      padding: 50px 80px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+    .contact-form button {
+      width:100%; padding:12px; background:#312824; color:#fff; border:1px solid #312824;
+      font-weight:600; cursor:pointer; transition:all 0.3s;
     }
-    .contact-section .contact-info {
-      flex: 1 1 400px;
-      color: #ffffff;
-      font-size: 14px;
-      text-align: center;
-    }
-    .contact-section .contact-form {
-      flex: 1 1 400px;
-      background: #ffffff;
-      padding: 20px;
-      position: relative;
-    }
-    .contact-section .contact-form input,
-    .contact-section .contact-form textarea {
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 8px;
-      font-family: inherit;
-      font-size: 14px;
-      border: none;
-      border-bottom: 1px solid #d0ac68;
-      background: rgba(255,255,255,0.9);
-    }
-    .contact-section .contact-form button {
-      width: 100%;
-      padding: 12px;
-      background: #312824;
-      color: white;
-      border: 1px solid #312824;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .contact-section .contact-form button:hover { background: rgba(49,40,36,0.8); }
+    .contact-form button:hover { background:rgba(49,40,36,0.8); }
 
     /* Footer */
-    .footer {
-      background-color: #29221f;
-      color: #cccccc;
-      text-align: center;
-      padding: 20px;
-      font-size: 10px;
-    }
+    .footer { background:#29221f; color:#ccc; text-align:center; padding:20px; font-size:10px; }
 
     /* Responsive */
-    @media screen and (max-width: 768px) {
-      .main-table, .main-table tbody, .main-table tr, .main-table td {
-        display: block;
-        width: 100% !important;
-        height: auto;
-      }
-      .contact-section { flex-direction: column; }
-      .action-button { width: 100%; }
+    @media screen and (max-width:768px) {
+      .main-table, .main-table tbody, .main-table tr, .main-table td { display:block; width:100% !important; height:auto; }
+      .contact-section { flex-direction:column; }
+      .booking-button { width:100%; max-width:400px; }
     }
   </style>
 </head>
@@ -172,38 +76,33 @@
         <table style="width:100%; border-collapse:collapse; border:none;">
           <tr>
             <td class="header-nested">
-              <div style="flex:1; text-align:left;">Dirtskool</div>
-              <div style="flex:1; text-align:right;">
-                <a href="https://www.dirtskool.org">Mainpage</a>
-              </div>
+              <div style="text-align:left;">Dirtskool</div>
+              <div style="text-align:right;"><a href="https://www.dirtskool.org">Mainpage</a></div>
             </td>
           </tr>
         </table>
       </td>
     </tr>
 
-    <!-- Booking Content -->
+    <!-- Booking content -->
     <tr>
       <td colspan="2">
-        <div class="booking-section">
-          <h1>Teachers, book your class into Dirtskool right here!</h1>
-          <p>You can return here at any time to adjust your own schedule.<br>
-          Each class can attend a maximum of one session per week.<br>
-          Students cannot ride until they have completed the pre-course survey.</p>
-          
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSckYSgWQwrOlvI1sjTzH6LlqErv3vOgCouqXN8fhGblpu1M0w/viewform" target="_blank" class="action-button">Enrol a new class in Dirtskool</a>
-          <a href="https://docs.google.com/spreadsheets/d/1_XCSERuj3Hef0c6NErb__MnapWSFD6DjWhjJiClyFIs/edit?gid=630516063#gid=630516063" target="_blank" class="action-button">Schedule sessions for 2025</a>
+        <div class="main-content">
+          <h1>Teachers, Book Your Class Into Dirtskool!</h1>
+          <p>Each class can attend one session per week. Students must complete the pre-course survey before riding.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSckYSgWQwrOlvI1sjTzH6LlqErv3vOgCouqXN8fhGblpu1M0w/viewform" target="_blank" class="booking-button">Enrol a new class</a>
+          <a href="https://docs.google.com/spreadsheets/d/1_XCSERuj3Hef0c6NErb__MnapWSFD6DjWhjJiClyFIs/edit?gid=630516063#gid=630516063" target="_blank" class="booking-button">Schedule sessions 2025</a>
         </div>
       </td>
     </tr>
 
-    <!-- Contact Section -->
+    <!-- Contact section -->
     <tr>
       <td colspan="2">
         <div class="contact-section">
           <div class="contact-info">
-            <h2 style="color:#203715; font-size:32px;">Want to know more?<br>Get in Touch</h2>
-            <p style="color:#203715; font-size:24px;">021 746642</p>
+            <h2>Want to know more?<br>Get in Touch</h2>
+            <p>021 746642</p>
           </div>
 
           <div class="contact-form">
