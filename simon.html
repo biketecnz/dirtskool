@@ -21,7 +21,15 @@
 </script>
   
   
-  <style>
+ <style>
+    body {
+    display: flex;
+    justify-content: center; /* center content horizontally */
+  }
+  .page-container {
+    max-width: 1400px; /* optional: controls maximum width on large screens */
+    width: 100%;
+  }
   /* Base styles */
   body {
   margin: 0;
@@ -173,6 +181,7 @@
 </style>
 </head>
 <body>
+  <div class="page-container">
   <table class="main-table">
     <tr>
       <td colspan="2">
@@ -291,5 +300,6 @@
       <td colspan="2">© 2025 Dirtskool</td>
     </tr>
   </table>
+  </div>
 </body>
 </html>
