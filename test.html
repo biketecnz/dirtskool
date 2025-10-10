@@ -363,23 +363,21 @@ window.addEventListener('load', function() {
     font-weight: 200;
   }
 
-  /* logo */
-  .main-table tr:nth-child(13) {
-    display: block;
-  width: 100%;      /* full width of parent */
-  max-width: 400px; /* large screen limit */
-  height: auto;     /* maintain aspect ratio */
-  margin: 0 auto;   /* center */
-    background-color: #312824ff;
-  }
-  
-  .main-table tr:nth-child(13) img {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    margin: 0 auto;
-  }
+  /* Logo row */
+.main-table tr:nth-child(13) {
+  width: 100%;
+  background-color: #312824ff;
+  text-align: center;  /* centers the img inside */
+  padding: 40px 0 50px 0; /* vertical padding for spacing */
+}
+
+.main-table tr:nth-child(13) img {
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;  /* limit large screen size */
+  height: auto;
+}
+
 
   .main-table tr:nth-child(13) td {
     text-align: center;
@@ -667,11 +665,12 @@ window.addEventListener('load', function() {
         <img src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_8.jpg" alt="Cover Image 8">
       </td>
     </tr>
-    <tr>
-      <td colspan="2" style="text-align: center; padding: 40px;">
-        <img src="https://biketecnz.github.io/dirtskool/dirtskool-logo-v2-final-PNG.png" alt="Dirtskool Logo" style="position: relative; width: auto; max-width: 1000px; height: auto; margin: 0 auto;">
-      </td>
-    </tr>
+   <tr>
+  <td colspan="2">
+    <img src="https://biketecnz.github.io/dirtskool/dirtskool-logo-v2-final-PNG.png" alt="Dirtskool Logo">
+  </td>
+</tr>
+
     <tr>
       <td colspan="2">
         <table style="width: 900px; height: 100%; margin: 0 auto; background: #203715ff;; border-collapse: collapse; border: none;">
