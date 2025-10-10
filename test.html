@@ -365,13 +365,17 @@ window.addEventListener('load', function() {
 
   /* logo */
   .main-table tr:nth-child(13) {
-    height: auto !important;
+    display: block;
+  width: 100%;      /* full width of parent */
+  max-width: 400px; /* large screen limit */
+  height: auto;     /* maintain aspect ratio */
+  margin: 0 auto;   /* center */
     background-color: #312824ff;
   }
   
   .main-table tr:nth-child(13) img {
     position: relative;
-    width: auto;
+    width: 100%;
     max-width: 400px;
     height: auto;
     margin: 0 auto;
@@ -474,6 +478,9 @@ window.addEventListener('load', function() {
     display: block;
     width: 100% !important;
     height: auto;
+  .main-table tr:nth-child(13) img {
+    width: 100%;    /* full width of screen */
+    max-width: 100%;/* remove large screen limit */  
   }
 
   /* Stack split columns vertically on mobile */
