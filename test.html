@@ -375,15 +375,16 @@ window.addEventListener('load', function() {
   text-align: center;  /* make sure TD content centers */
 }
 
-/* Logo image */
-.main-table tr:nth-child(13) img {
-  display: inline-block; /* allows text-align: center to work */
-  width: auto;           /* natural width unless constrained by max-width */
-  max-width: 1200px;      /* limit on large screens */
-  height: auto;
-  position: static !important;   /* prevent absolute positioning */
-}
-
+  /* Logo row image */
+  .main-table tr:nth-child(13) img {
+    width: 80%;          /* scale down a bit */
+    max-width: 300px;    /* optional */
+    height: auto;
+    display: block;
+    margin: 0 auto;      /* center horizontally */
+    position: static;    /* ensure not absolute */
+  }
+  
   /* Our Goal*/
   .main-table tr:nth-child(14) {
     height: 150px !important;
@@ -476,10 +477,10 @@ window.addEventListener('load', function() {
     display: block;
     width: 100% !important;
     height: auto;
-  .main-table tr:nth-child(13) img {
-    width: 100%;      /* full width of parent */
-    max-width: 100%;  /* override desktop max-width */
   }
+
+
+
 
   /* Stack split columns vertically on mobile */
   .split-left, .split-right {
