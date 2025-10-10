@@ -1,367 +1,200 @@
-<html><head><base href="https://www.dirtskool.org" />
+<html>
+<head>
+<base href="https://www.dirtskool.org" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-  href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-  rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K3GLLFF698"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-K3GLLFF698');
 </script>
 
-  
 <style>
-    body {
-    display: flex;
-    justify-content: center; /* center content horizontally */
-  }
-  .page-container {
-    max-width: 1400px; /* optional: controls maximum width on large screens */
-    width: 100%;
-  }
-  
-  /* Main table structure */
-  .main-table {
-    width: 100%;
-    max-width: 1900px;
-    height: 100vh;
-    border-collapse: collapse;
-    table-layout: fixed;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Common cell styles */
-  .main-table td {
-    border: 1px solid #333;
-    vertical-align: top;
-    position: relative;
-    overflow: hidden;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
 
-  /* Header row */
-  .main-table tr:nth-child(1) { 
-    height: 60px !important;
-    background-color: #29221fff
-  }
-  .main-table tr:nth-child(1) td {
-    color: white;
-    font-weight: 800;
-    text-align: center;
-    padding: 20px 30px 0px 20px;
-    font-size: 22px;
-  }
-  
-  /* Updated header-nested style */
-  .header-nested {
-    background-color: #29221fff;
-    width: 100%;
-    margin: 0 auto;
-    border: 0px solid #404040 !important;
-    border-radius: 0px;
-    padding: 0px 20px !important;
-  }
+.page-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
 
-  /* Ensure the td containing the header has proper display and width */
-  .header-nested td {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px !important;
-  }
+/* Main table structure */
+.main-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 0;
+  padding: 0;
+}
 
-  /* Add styles for the header links/text */
-  .header-nested div {
-    flex: 1;
-    padding: 0 10px;
-  }
+.main-table td {
+  border: 1px solid #333;
+  vertical-align: top;
+  position: relative;
+  overflow: hidden;
+}
 
-  /* Add styles for the header booking link */
-  .header-nested a {
-    color: #ffffff;
-    text-decoration: none;
-    display: inline-block;
-    vertical-align: middle;
-  }
+/* Header */
+.main-table tr:nth-child(1) { 
+  height: 60px !important;
+  background-color: #29221f;
+}
+.main-table tr:nth-child(1) td {
+  color: white;
+  font-weight: 800;
+  text-align: center;
+  padding: 20px 30px 0px 20px;
+  font-size: 22px;
+}
 
-  /* body */
-  .main-table tr:nth-child(2) { 
-    background-color: #29221fff
-  }
-  .main-table tr:nth-child(2) td {
-    color: white;
-    font-weight: 200;
-    text-align: center;
-    padding: 30px 00px 100px 00px;
-    font-size: 26px;
-  }
-  
-  /* Contact section */
-  .main-table tr:nth-child(3) { 
-    height: 600px !important;
-    background-color: #312824ff;
-  }
-  .main-table tr:nth-child(3) td {
-    color: white;
-    font-weight: 400;
-    text-align: center;
-    padding: 30px 80px 80px 0px;
-    font-size: 10px;
-  }
-  
-  /* Copyright section */
-  .main-table tr:nth-child(4) { 
-    height: 30px !important;
-    background-color: #29221fff;
-  }
-  .main-table tr:nth-child(4) td {
-    color: #cccccc;
-    font-weight: 300;
-    text-align: center;
-    padding: 20px;
-    font-size: 10px;
-  }
-  
-  /* Mobile responsiveness */
-  @media screen and (max-width: 768px) {
-    .main-table, 
-    .main-table tbody, 
-    .main-table tr, 
-    .main-table td {
-      display: block;
-      width: 100% !important;
-      height: auto;
-    }
-    
-    .main-table td {
-      margin: 0;
-    }
-    
-    .video-overlay {
-      font-size: 24px;
-    }
-  }
+.header-nested {
+  width: 100%;
+  margin: 0 auto;
+  border: 0;
+  padding: 0 20px;
+  background-color: #29221f;
+}
+.header-nested td {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.header-nested div { flex: 1; padding: 0 10px; }
+.header-nested a { color: #ffffff; text-decoration: none; }
 
-  /* Nested cell styles */
-  .nested-cell {
-    width: 900px;
-    height: 100%;
-    margin: 0 auto;
-    background: red;
-    border-collapse: collapse;
-    border: none;
-  }
+/* Body */
+.main-table tr:nth-child(2) { background-color: #29221f; }
+.main-table tr:nth-child(2) td {
+  color: white;
+  font-weight: 200;
+  text-align: center;
+  padding: 30px 0 100px 0;
+  font-size: 26px;
+}
 
-  /* Update the image object-position property in the contact section */
-  .main-table tr:nth-child(3) td:nth-child(2) img {
-    object-position: top;
-  }
+/* Contact section */
+.main-table tr:nth-child(3) { background-color: #312824; }
+.main-table tr:nth-child(3) td {
+  color: white;
+  font-weight: 400;
+  text-align: center;
+  padding: 30px 80px 80px 0px;
+  font-size: 10px;
+}
+.main-table tr:nth-child(3) td:nth-child(2) {
+  background-color: #312824; /* fix white bg */
+  position: relative;
+}
 
+/* Copyright */
+.main-table tr:nth-child(4) { background-color: #29221f; height: 30px !important; }
+.main-table tr:nth-child(4) td {
+  color: #cccccc;
+  font-weight: 300;
+  text-align: center;
+  padding: 20px;
+  font-size: 10px;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .main-table, .main-table tbody, .main-table tr, .main-table td {
+    display: block;
+    width: 100% !important;
+    height: auto;
+  }
+  .main-table td { margin: 0; }
+}
+
+/* Buttons */
+.action-button {
+  width: 400px;
+  padding: 15px 0;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  margin: 10px 0;
+}
+.action-button:hover { background: rgba(255,255,255,0.1); }
 </style>
 </head>
 <body>
-  <div class="page-container">
-  <table class="main-table">
-    <tr>
-      <td colspan="2">
-        <table style="width: 100%; border-collapse: collapse; border: none;">
-          <tr>
-            <td class="header-nested" style="display: flex; justify-content: space-between; align-items: center;">
-              <div style="flex: 1; text-align: left;">Dirtskool</div>
-              <div style="flex: 1; text-align: right;">
-                <a href="https://www.dirtskool.org" style="color: #ffffff; text-decoration: none;">Mainpage</a>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <table style="width: 900px; height: 100%; margin: 0 auto; background: #29221fff; border-collapse: collapse; border: none;">
-          <tr>
-            <td style="font-weight: 300; text-align: center; padding: 0px; font-size: 16px; background: #29221fff; border: none;">
-              <h1>Teachers,<br>
-              book your class into Dirtskool<br>
-              right here, right now!</h1>
-              <p> You can return here at any time to adjust your own schedule.<br><br>
-              Each class can attend a maximum of one session per week<br><br>
-              <b>Students can not ride until they have completed the<br>
-              two minute pre-course survey at <a href="https://www.dirtskool.org/before" style="color: #ffffff; text-decoration: underline;">dirtskool.org/before</a></b><br><br>
-              Cancellation within two working days of the session and no shows will be charged $100.</p>
-              
-              <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; margin-top: 40px;">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSckYSgWQwrOlvI1sjTzH6LlqErv3vOgCouqXN8fhGblpu1M0w/viewform" 
-                   target="_blank"
-                   style="width: 400px; 
-                          padding: 15px 0;
-                          border: 1px solid white;
-                          background: transparent;
-                          color: white;
-                          text-decoration: none;
-                          display: inline-block;
-                          font-size: 16px;
-                          transition: all 0.3s ease;">
-                  Enrol a new class in Dirtskool
-                </a>
-                
-                <a href="https://docs.google.com/spreadsheets/d/1_XCSERuj3Hef0c6NErb__MnapWSFD6DjWhjJiClyFIs/edit?gid=630516063#gid=630516063"
-                   target="_blank"
-                   style="width: 400px;
-                          padding: 15px 0;
-                          border: 1px solid white;
-                          background: transparent;
-                          color: white;
-                          text-decoration: none;
-                          display: inline-block;
-                          font-size: 16px;
-                          transition: all 0.3s ease;">
-                  Schedule sessions for 2025
-                </a>
-                
-              </div>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <table style="width: 1200px; height: 100%; margin: 80px auto; background: #312824ff; border-collapse: collapse; border: none;">
-          <tr>
-            <td style="width: 50%; font-weight: 400; text-align: center; padding: 25px; font-size: 12px; background: white; border: none;">
-              <h2 style="color: #203715ff; font-size: 32px; margin-bottom: 15px;">Want to know more?<br>Get in Touch</h2>
-              <p style="color: #203715ff; font-size: 24px; margin-bottom: 30px;">021 746642</p>
+<div class="page-container">
+<table class="main-table">
+<tr>
+  <td colspan="2">
+    <table style="width:100%; border-collapse:collapse; border:none;">
+      <tr>
+        <td class="header-nested">
+          <div style="flex:1; text-align:left;">Dirtskool</div>
+          <div style="flex:1; text-align:right;">
+            <a href="https://www.dirtskool.org">Mainpage</a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
 
-              <!-- Add EmailJS scripts -->
-              <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-              <script type="text/javascript">
-                (function() {
-                  emailjs.init({
-                    publicKey: "eS1lECw2cL7yaaYvC",
-                  });
-                })();
-              </script>
-              <script type="text/javascript">
-                window.onload = function() {
-                  document.getElementById('contact-form').addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    
-                    // First validate email
-                    const email = document.getElementById('user_email').value;
-                    if (!email.includes('@')) {
-                      alert('Please enter a valid email address with @ symbol');
-                      return false;
-                    }
+<tr>
+  <td colspan="2">
+    <table style="width:900px; height:100%; margin:0 auto; background:#29221f; border-collapse:collapse; border:none;">
+      <tr>
+        <td style="text-align:center; font-weight:300; font-size:16px; padding:0; background:#29221f; border:none;">
+          <h1>Teachers,<br>book your class into Dirtskool<br>right here, right now!</h1>
+          <p>You can return here at any time to adjust your own schedule.<br><br>
+          Each class can attend a maximum of one session per week<br><br>
+          <b>Students cannot ride until they have completed the<br>
+          two minute pre-course survey at <a href="https://www.dirtskool.org/before" style="color:#ffffff; text-decoration:underline;">dirtskool.org/before</a></b><br><br>
+          Cancellation within two working days of the session and no shows will be charged $100.</p>
+          
+          <div style="display:flex; flex-direction:column; align-items:center; gap:20px; margin-top:40px;">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSckYSgWQwrOlvI1sjTzH6LlqErv3vOgCouqXN8fhGblpu1M0w/viewform" target="_blank" class="action-button">Enrol a new class in Dirtskool</a>
+            <a href="https://docs.google.com/spreadsheets/d/1_XCSERuj3Hef0c6NErb__MnapWSFD6DjWhjJiClyFIs/edit?gid=630516063#gid=630516063" target="_blank" class="action-button">Schedule sessions for 2025</a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
 
-                    // Show loading state
-                    const submitButton = this.querySelector('button[type="submit"]');
-                    const originalButtonText = submitButton.innerHTML;
-                    submitButton.innerHTML = 'Sending...';
-                    submitButton.disabled = true;
+<tr>
+  <td colspan="2">
+    <table style="width:1200px; height:100%; margin:80px auto; background:#312824; border-collapse:collapse; border:none;">
+      <tr>
+        <td style="width:50%; text-align:center; padding:25px; font-size:12px; font-weight:400; background:#312824;">
+          <h2 style="color:#203715; font-size:32px; margin-bottom:15px;">Want to know more?<br>Get in Touch</h2>
+          <p style="color:#203715; font-size:24px; margin-bottom:30px;">021 746642</p>
+          <!-- EmailJS scripts here -->
+        </td>
+        <td style="width:50%; text-align:left; padding:0; font-size:20px; background:#312824; position:relative;">
+          <img src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_Simon.jpg" alt="Simon" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
 
-                    // Send email using EmailJS
-                    emailjs.sendForm('service_ykda5qg', 'template_oah4zj9', this)
-                      .then(() => {
-                        // Success
-                        alert('Thank you for your message, we\'ll be in touch soon');
-                        this.reset(); // Clear the form
-                      })
-                      .catch((error) => {
-                        // Error
-                        console.error('EmailJS Error:', error);
-                        alert('Failed to send message. Please try again.');
-                      })
-                      .finally(() => {
-                        // Reset button state
-                        submitButton.innerHTML = originalButtonText;
-                        submitButton.disabled = false;
-                      });
-                  });
-                }
-              </script>
+<tr>
+  <td colspan="2">© 2025 Dirtskool</td>
+</tr>
 
-              <form id="contact-form" style="max-width: 400px; margin: 0 auto;">
-                <input type="hidden" name="contact_number" value="697483">
-                
-                <div style="margin-bottom: 20px;">
-                  <input type="text" 
-                         id="user_name" 
-                         name="user_name" 
-                         placeholder="Your name"
-                         required 
-                         style="width: 100%; 
-                                padding: 8px; 
-                                border: none;
-                                border-bottom: 1px solid #d0ac68ff; 
-                                background: rgba(255,255,255,0.9);
-                                font-family: inherit;
-                                font-size: inherit;">
-                </div>
-                
-                <div style="margin-bottom: 20px;">
-                  <input type="text" 
-                         id="user_email" 
-                         name="user_email" 
-                         placeholder="Your email address"
-                         pattern="[^@\s]+@[^@\s]+"
-                         title="Must be an email address"
-                         required 
-                         style="width: 100%; 
-                                padding: 8px; 
-                                border: none;
-                                border-bottom: 1px solid #d0ac68ff; 
-                                background: rgba(255,255,255,0.9);
-                                font-family: inherit;
-                                font-size: inherit;">
-                </div>
-                
-                <div style="margin-bottom: 20px;">
-                  <label for="message" style="display: block; color: #777675ff; margin-bottom: 5px; font-size: 13px; text-align: left; padding: 0px 0px 0px 11px; font-family: Arial;">Your message</label>
-                  <textarea id="message" 
-                            name="message" 
-                            required 
-                            style="width: 100%; 
-                                   height: 120px; 
-                                   padding: 8px; 
-                                   border: none;
-                                   border-bottom: 1px solid #d0ac68ff; 
-                                   background: rgba(255,255,255,0.9);
-                                   font-family: inherit;
-                                   font-size: inherit;"></textarea>
-                </div>
-                
-                <button type="submit" style="width: 100%; 
-                            background: #312824ff;  
-                            color: white; 
-                            border: 1px solid #312824ff; 
-                            padding: 12px; 
-                            border-radius: 0px; 
-                            cursor: pointer; 
-                            font-size: 16px; 
-                            font-weight: 600;
-                            transition: all 0.3s ease;">Send Message</button>
-              </form>
-            </td>
-            <td style="width: 50%; font-weight: 400; text-align: left; padding: 0; font-size: 20px; background: white; border: none; position: relative;">
-              <img src="https://biketecnz.github.io/dirtskool/DS_WEB_Cover_Image_Simon.jpg" alt="Simon" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    
-    <tr>
-      <td colspan="2">© 2025 Dirtskool</td>
-    </tr>
-  </table>
-  </div>
+</table>
+</div>
 </body>
 </html>
