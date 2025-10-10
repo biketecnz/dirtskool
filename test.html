@@ -363,26 +363,25 @@ window.addEventListener('load', function() {
     font-weight: 200;
   }
 
-  /* Logo row */
+/* Logo row */
 .main-table tr:nth-child(13) {
   width: 100%;
   background-color: #312824ff;
-  text-align: center;  /* centers the img inside */
-  padding: 40px 0 50px 0; /* vertical padding for spacing */
+  text-align: center;  /* ensures inline-block img is centered */
+  padding: 40px 0 50px 0;
 }
 
+.main-table tr:nth-child(13) td {
+  text-align: center;  /* make sure TD content centers */
+}
+
+/* Logo image */
 .main-table tr:nth-child(13) img {
-  display: inline-block;
-  width: 100%;
-  max-width: 400px;  /* limit large screen size */
+  display: inline-block; /* allows text-align: center to work */
+  width: auto;           /* natural width unless constrained by max-width */
+  max-width: 1200px;      /* limit on large screens */
   height: auto;
 }
-
-
-  .main-table tr:nth-child(13) td {
-    text-align: center;
-    padding: 60px 00px 70px 30px;
-  }
 
   /* Our Goal*/
   .main-table tr:nth-child(14) {
