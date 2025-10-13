@@ -731,6 +731,13 @@ window.addEventListener('load', function() {
                       return false;
                     }
 
+                    // Validate reCAPTCHA
+                    const recaptchaResponse = grecaptcha.getResponse();
+                    if (!recaptchaResponse) {
+                      alert('Please verify that you are not a robot.');
+                      return false;
+                    }
+
                     // Show loading state
                     const submitButton = this.querySelector('button[type="submit"]');
                     const originalButtonText = submitButton.innerHTML;
@@ -809,8 +816,10 @@ window.addEventListener('load', function() {
                 </div>
 
            
-           <div class="g-recaptcha" data-sitekey="6LdXHegrAAAAAE-kpWkBDqFT7QhA6_-MvmQYecW4" div style="margin-bottom: 20px; width: 50%; text-align: center; padding: 25px"></div>
-          
+           <div style="display: flex; justify-content: center; margin: 20px 0;">
+              <div class="g-recaptcha" data-sitekey="6LdXHegrAAAAAE-kpWkBDqFT7QhA6_-MvmQYecW4"></div>
+            </div>
+
                 <button type="submit" style="width: 100%; 
                             background: #312824ff;  
                             color: white; 
